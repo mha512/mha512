@@ -1,0 +1,15 @@
+FONT LICENSES & ATTRIBUTIONS
+
+1. Plus Jakarta Sans
+Family: Plus Jakarta Sans
+Weight: 700 Bold
+Author / Copyright: Copyright 2020 The Plus Jakarta Sans Project Authors (https://github.com/tokotype/PlusJakartaSans)
+License: SIL Open Font License, Version 1.1 (OFL-1.1)
+https://openfontlicense.org/open-font-license-official-text/
+
+2. JetBrains Mono
+Family: JetBrains Mono
+Weight: 500 Medium
+Author / Copyright: Copyright 2020 The JetBrains Mono Project Authors (https://github.com/JetBrains/JetBrainsMono)
+License: SIL Open Font License, Version 1.1 (OFL-1.1)
+https://openfontlicense.org/open-font-license-official-text/
