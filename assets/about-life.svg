@@ -27,25 +27,25 @@
       .about-text-dim { fill: #94a3b8; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
       .about-text-light { fill: #f1f5f9; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
       
-      /* Carousel Slides: 12s cycle, 4s each */
+      /* Carousel Slides: 12s cycle, 4s each - OPACITY ONLY */
       .about-slide-1 { animation: about-slide-fade-1 12s infinite both; }
       .about-slide-2 { animation: about-slide-fade-2 12s infinite both; }
       .about-slide-3 { animation: about-slide-fade-3 12s infinite both; }
       
       @keyframes about-slide-fade-1 {
-        0%, 30% { opacity: 1; transform: translateX(0); }
-        33.3%, 96.6% { opacity: 0; transform: translateX(12px); }
-        100% { opacity: 1; transform: translateX(0); }
+        0%, 30% { opacity: 1; }
+        33.3%, 96.6% { opacity: 0; }
+        100% { opacity: 1; }
       }
       @keyframes about-slide-fade-2 {
-        0%, 30% { opacity: 0; transform: translateX(-12px); }
-        33.3%, 63.3% { opacity: 1; transform: translateX(0); }
-        66.6%, 100% { opacity: 0; transform: translateX(12px); }
+        0%, 30% { opacity: 0; }
+        33.3%, 63.3% { opacity: 1; }
+        66.6%, 100% { opacity: 0; }
       }
       @keyframes about-slide-fade-3 {
-        0%, 63.3% { opacity: 0; transform: translateX(-12px); }
-        66.6%, 96.6% { opacity: 1; transform: translateX(0); }
-        100% { opacity: 0; transform: translateX(12px); }
+        0%, 63.3% { opacity: 0; }
+        66.6%, 96.6% { opacity: 1; }
+        100% { opacity: 0; }
       }
       
       /* Segment Progress Bars */
@@ -72,7 +72,7 @@
       }
       
       @media (prefers-reduced-motion: reduce) {
-        .about-slide-1 { opacity: 1 !important; transform: none !important; animation: none !important; }
+        .about-slide-1 { opacity: 1 !important; animation: none !important; }
         .about-slide-2, .about-slide-3 { display: none !important; animation: none !important; }
         .about-bar-1 { width: 116px !important; animation: none !important; }
         .about-bar-2, .about-bar-3 { width: 0px !important; animation: none !important; }

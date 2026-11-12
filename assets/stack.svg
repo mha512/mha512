@@ -26,30 +26,6 @@
       .stack-mono { font-family: 'stackMono', monospace; }
       .stack-text-dim { fill: #94a3b8; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
       .stack-text-light { fill: #f1f5f9; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
-      
-      /* Subtle orbital drift */
-      .stack-drift-1 { animation: stack-orbit-drift-1 20s ease-in-out infinite alternate both; }
-      .stack-drift-2 { animation: stack-orbit-drift-2 24s ease-in-out infinite alternate both; }
-      .stack-drift-3 { animation: stack-orbit-drift-3 28s ease-in-out infinite alternate both; }
-      
-      @keyframes stack-orbit-drift-1 {
-        0% { transform: translate(0, 0); }
-        100% { transform: translate(6px, -4px); }
-      }
-      @keyframes stack-orbit-drift-2 {
-        0% { transform: translate(0, 0); }
-        100% { transform: translate(-6px, 4px); }
-      }
-      @keyframes stack-orbit-drift-3 {
-        0% { transform: translate(0, 0); }
-        100% { transform: translate(5px, 3px); }
-      }
-      
-      @media (prefers-reduced-motion: reduce) {
-        .stack-drift-1, .stack-drift-2, .stack-drift-3 {
-          animation: none !important;
-        }
-      }
       ]]>
     </style>
     
@@ -111,8 +87,7 @@
     </g>
 
     <!-- ORBIT 1 NODES (Core Backend: Laravel, PHP, MySQL, REST APIs) -->
-    <g class="stack-drift-1" transform="translate(0, 0)">
-      <animateTransform attributeName="transform" type="translate" values="0 0; 6 -4; 0 0" dur="20s" repeatCount="indefinite" begin="0s" />
+    <g transform="translate(0, 0)">
       <!-- Laravel -->
       <g transform="translate(-135, -28)">
         <rect x="-42" y="-13" width="84" height="26" rx="13" fill="#1b1220" stroke="#ff2d20" stroke-width="1.2"/>
@@ -150,8 +125,7 @@
     </g>
 
     <!-- ORBIT 2 NODES (Python, FastAPI, PostgreSQL, Docker) -->
-    <g class="stack-drift-2" transform="translate(0, 0)">
-      <animateTransform attributeName="transform" type="translate" values="0 0; -6 4; 0 0" dur="24s" repeatCount="indefinite" begin="0s" />
+    <g transform="translate(0, 0)">
       <!-- Python -->
       <g transform="translate(-255, -20)">
         <rect x="-38" y="-13" width="76" height="26" rx="13" fill="#102038" stroke="#3776ab" stroke-width="1.2"/>
@@ -190,8 +164,7 @@
     </g>
 
     <!-- ORBIT 3 NODES (JavaScript, TypeScript, React, Git & GitHub) -->
-    <g class="stack-drift-3" transform="translate(0, 0)">
-      <animateTransform attributeName="transform" type="translate" values="0 0; 5 3; 0 0" dur="28s" repeatCount="indefinite" begin="0s" />
+    <g transform="translate(0, 0)">
       <!-- JavaScript -->
       <g transform="translate(-365, -8)">
         <rect x="-46" y="-13" width="92" height="26" rx="13" fill="#2d2811" stroke="#f7df1e" stroke-width="1.2"/>

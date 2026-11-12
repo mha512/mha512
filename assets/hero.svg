@@ -22,19 +22,10 @@
     
       
       .hero-bg { fill: #070b16; }
-      .hero-title { font-family: 'heroDisplay', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-weight: 700; fill: #ffffff; }
-      .hero-mono { font-family: 'heroMono', monospace; }
+      .hero-title { font-family: 'heroDisplay', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-weight: 700; fill: #ffffff; }
+      .hero-mono { font-family: 'heroMono', monospace, 'Courier New'; }
       .hero-text-dim { fill: #94a3b8; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
       .hero-text-light { fill: #f1f5f9; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
-      
-      /* Name reveal animation with fill-mode both */
-      .hero-reveal {
-        animation: hero-rising 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
-      }
-      @keyframes hero-rising {
-        0% { transform: translateY(50px); opacity: 0; }
-        100% { transform: translateY(0); opacity: 1; }
-      }
       
       /* Typing greeting */
       .hero-cursor {
@@ -45,31 +36,31 @@
         50% { opacity: 0; }
       }
       
-      /* 4 Cycling Roles (12s cycle: 3s each) */
+      /* 4 Cycling Roles: OPACITY ONLY to guarantee zero layout shifts */
       .hero-role-1 { animation: hero-cycle-1 12s infinite both; }
       .hero-role-2 { animation: hero-cycle-2 12s infinite both; }
       .hero-role-3 { animation: hero-cycle-3 12s infinite both; }
       .hero-role-4 { animation: hero-cycle-4 12s infinite both; }
       
       @keyframes hero-cycle-1 {
-        0%, 22% { opacity: 1; transform: translateY(0); }
-        25%, 97% { opacity: 0; transform: translateY(-10px); }
-        98%, 100% { opacity: 1; transform: translateY(0); }
+        0%, 22% { opacity: 1; }
+        25%, 97% { opacity: 0; }
+        98%, 100% { opacity: 1; }
       }
       @keyframes hero-cycle-2 {
-        0%, 23% { opacity: 0; transform: translateY(10px); }
-        26%, 47% { opacity: 1; transform: translateY(0); }
-        50%, 100% { opacity: 0; transform: translateY(-10px); }
+        0%, 23% { opacity: 0; }
+        26%, 47% { opacity: 1; }
+        50%, 100% { opacity: 0; }
       }
       @keyframes hero-cycle-3 {
-        0%, 48% { opacity: 0; transform: translateY(10px); }
-        51%, 72% { opacity: 1; transform: translateY(0); }
-        75%, 100% { opacity: 0; transform: translateY(-10px); }
+        0%, 48% { opacity: 0; }
+        51%, 72% { opacity: 1; }
+        75%, 100% { opacity: 0; }
       }
       @keyframes hero-cycle-4 {
-        0%, 73% { opacity: 0; transform: translateY(10px); }
-        76%, 97% { opacity: 1; transform: translateY(0); }
-        100% { opacity: 0; transform: translateY(-10px); }
+        0%, 73% { opacity: 0; }
+        76%, 97% { opacity: 1; }
+        100% { opacity: 0; }
       }
       
       /* Pulse badge */
@@ -82,20 +73,11 @@
         100% { r: 3.5px; opacity: 0.9; }
       }
       
-      /* Portrait subtle float */
-      .hero-portrait-wrap {
-        animation: hero-float 6s ease-in-out infinite both;
-      }
-      @keyframes hero-float {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-4px); }
-      }
-      
       @media (prefers-reduced-motion: reduce) {
-        .hero-reveal, .hero-cursor, .hero-pulse-glow, .hero-portrait-wrap {
+        .hero-cursor, .hero-pulse-glow {
           animation: none !important;
         }
-        .hero-role-1 { opacity: 1 !important; transform: none !important; animation: none !important; }
+        .hero-role-1 { opacity: 1 !important; animation: none !important; }
         .hero-role-2, .hero-role-3, .hero-role-4 { display: none !important; animation: none !important; }
       }
       ]]>
@@ -130,10 +112,6 @@
     <clipPath id="hero-portrait-clip">
       <rect x="0" y="0" width="220" height="220" rx="20"/>
     </clipPath>
-    
-    <clipPath id="hero-name-mask">
-      <rect x="40" y="96" width="550" height="70"/>
-    </clipPath>
   </defs>
 
   <!-- Background Base -->
@@ -145,11 +123,12 @@
   <rect width="880" height="380" rx="20" fill="url(#hero-glow-crimson)"/>
   <rect x="1" y="1" width="878" height="378" rx="19" fill="none" stroke="url(#hero-border-grad)" stroke-width="1.2"/>
 
-  <!-- LEFT COLUMN -->
-  <!-- Status Badge -->
+  <!-- ==================== LEFT COLUMN: CONTENT (x=48) ==================== -->
+  
+  <!-- 1. Status Badge (y=36) -->
   <g transform="translate(48, 36)">
     <rect width="320" height="28" rx="14" fill="#0d1830" stroke="#1f3766" stroke-width="1"/>
-    <!-- Glowing green dot with SMIL + CSS -->
+    <!-- Glowing green dot -->
     <circle cx="16" cy="14" r="6" fill="#10b981" opacity="0.3" class="hero-pulse-glow">
       <animate attributeName="r" values="3.5;7;3.5" dur="2s" repeatCount="indefinite" begin="0s" />
       <animate attributeName="opacity" values="0.9;0.25;0.9" dur="2s" repeatCount="indefinite" begin="0s" />
@@ -158,8 +137,8 @@
     <text x="30" y="18" fill="#38bdf8" font-size="11" class="hero-mono" font-weight="700" letter-spacing="0.5">OPEN TO HIGH-IMPACT ROLES</text>
   </g>
 
-  <!-- Typed Greeting Terminal Line -->
-  <g transform="translate(48, 86)">
+  <!-- 2. Typed Greeting Terminal Line (y=88) -->
+  <g transform="translate(48, 88)">
     <text x="0" y="0" fill="#64748b" font-size="13" class="hero-mono">&gt; console.log(&quot;Hello, World!&quot;); // </text>
     <text x="264" y="0" fill="#38bdf8" font-size="13" class="hero-mono">meet the developer</text>
     <rect x="410" y="-11" width="7" height="14" fill="#247bff" class="hero-cursor">
@@ -167,17 +146,13 @@
     </rect>
   </g>
 
-  <!-- Rising-mask Name Reveal -->
-  <g clip-path="url(#hero-name-mask)">
-    <g class="hero-reveal" transform="translate(0, 0)">
-      <animateTransform attributeName="transform" type="translate" from="0 50" to="0 0" dur="0.9s" begin="0s" fill="freeze" calcMode="spline" keySplines="0.16 1 0.3 1" keyTimes="0; 1" />
-      <animate attributeName="opacity" from="0" to="1" dur="0.9s" begin="0s" fill="freeze" />
-      <text x="48" y="152" font-size="44" class="hero-title" fill="url(#hero-name-grad)" letter-spacing="-0.5">M Hashaam Ahmad</text>
-    </g>
+  <!-- 3. Name Reveal (y=144) - Fully visible, rock-solid -->
+  <g transform="translate(48, 144)">
+    <text x="0" y="0" font-size="44" class="hero-title" fill="url(#hero-name-grad)" letter-spacing="-0.5">M Hashaam Ahmad</text>
   </g>
 
-  <!-- Four Cycling Roles (3s each, SMIL + CSS) -->
-  <g transform="translate(48, 198)">
+  <!-- 4. Four Cycling Roles (y=194) -->
+  <g transform="translate(48, 194)">
     <text x="0" y="0" fill="#64748b" font-size="14" class="hero-mono" font-weight="500">ROLE // </text>
     
     <!-- Role 1 (Laravel Developer) -->
@@ -206,8 +181,8 @@
     </g>
   </g>
 
-  <!-- One-Line Pitch -->
-  <g transform="translate(48, 238)">
+  <!-- 5. One-Line Pitch (y=236) -->
+  <g transform="translate(48, 236)">
     <text x="0" y="0" font-size="15" class="hero-text-dim">
       <tspan x="0" dy="0">Software engineer who builds </tspan>
       <tspan fill="#f1f5f9" font-weight="600">fast, secure and scalable</tspan>
@@ -218,8 +193,8 @@
     </text>
   </g>
 
-  <!-- Location and Company Row -->
-  <g transform="translate(48, 308)">
+  <!-- 6. Location and Company Row (y=306) -->
+  <g transform="translate(48, 306)">
     <rect width="490" height="38" rx="10" fill="#0c162d" stroke="#1b305a" stroke-width="1"/>
     
     <!-- Company Badge -->
@@ -245,9 +220,11 @@
     </g>
   </g>
 
-  <!-- RIGHT COLUMN: Portrait Frame with id.png -->
-  <g transform="translate(596, 44)" class="hero-portrait-wrap">
+  <!-- ==================== RIGHT COLUMN: PORTRAIT (LOCKED AT x=596, y=44) ==================== -->
+  <g transform="translate(596, 44)">
+    <!-- Ambient back glow -->
     <rect x="-8" y="-8" width="248" height="298" rx="26" fill="#247bff" opacity="0.12"/>
+    <!-- Outer Card Frame -->
     <rect x="0" y="0" width="232" height="282" rx="22" fill="#0d1830" stroke="url(#hero-border-grad)" stroke-width="1.5"/>
     
     <!-- Inlined Portrait Image -->

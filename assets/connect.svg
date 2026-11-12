@@ -27,13 +27,13 @@
       .connect-text-dim { fill: #94a3b8; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
       .connect-text-light { fill: #f1f5f9; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
       
-      /* Nudging arrow animation */
+      /* Nudging arrow animation with nested group */
       .connect-arrow-nudge {
         animation: connect-nudge 2s ease-in-out infinite both;
       }
       @keyframes connect-nudge {
         0%, 100% { transform: translateX(0); }
-        50% { transform: translateX(8px); }
+        50% { transform: translateX(6px); }
       }
       
       /* Subtle pulse on connect button */
@@ -73,7 +73,7 @@
   <rect width="880" height="340" rx="20" fill="url(#connect-dots)"/>
   <rect x="1" y="1" width="878" height="338" rx="19" fill="none" stroke="url(#connect-border-grad)" stroke-width="1.2"/>
 
-  <!-- LEFT: POINTING CHARACTER FRAME WITH right_pointing.png -->
+  <!-- LEFT: POINTING CHARACTER FRAME WITH right_pointing.png (Locked at x=48, y=33) -->
   <g transform="translate(48, 33)">
     <rect x="-6" y="-6" width="272" height="286" rx="24" fill="#247bff" opacity="0.12"/>
     <rect x="0" y="0" width="260" height="274" rx="20" fill="#0a1329" stroke="url(#connect-border-grad)" stroke-width="1.5"/>
@@ -90,7 +90,7 @@
     </g>
   </g>
 
-  <!-- RIGHT: GENEROUSLY SPACED CARDS (USING ONLY VERIFIED DATA) -->
+  <!-- RIGHT: GENEROUSLY SPACED CARDS (Locked at x=338, y=33) -->
   <g transform="translate(338, 33)">
     <rect width="130" height="22" rx="11" fill="#0e1f3d" stroke="#1f3a6e" stroke-width="1"/>
     <text x="12" y="15" fill="#38bdf8" font-size="10.5" class="connect-mono" font-weight="700" letter-spacing="0.5">CONNECT &amp; EXPLORE</text>
@@ -117,10 +117,11 @@
         <text x="20" y="14" fill="#34d399" font-size="9" class="connect-mono" font-weight="700">VERIFIED</text>
       </g>
 
-      <!-- Nudging Arrow with SMIL + CSS -->
-      <g transform="translate(450, 33)" class="connect-arrow-nudge">
-        <animateTransform attributeName="transform" type="translate" values="450 33; 458 33; 450 33" dur="2s" repeatCount="indefinite" begin="0s" />
-        <path d="M0 0h18M11 -5l6 5-6 5" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- Nudging Arrow with safe nested group -->
+      <g transform="translate(450, 33)">
+        <g class="connect-arrow-nudge">
+          <path d="M0 0h18M11 -5l6 5-6 5" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
       </g>
     </g>
 
@@ -143,10 +144,11 @@
         <text x="40" y="14" text-anchor="middle" fill="#60a5fa" font-size="9" class="connect-mono" font-weight="700">CONNECT</text>
       </g>
 
-      <!-- Nudging Arrow with SMIL + CSS -->
-      <g transform="translate(450, 33)" class="connect-arrow-nudge">
-        <animateTransform attributeName="transform" type="translate" values="450 33; 458 33; 450 33" dur="2s" repeatCount="indefinite" begin="0s" />
-        <path d="M0 0h18M11 -5l6 5-6 5" fill="none" stroke="#0a66c2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- Nudging Arrow with safe nested group -->
+      <g transform="translate(450, 33)">
+        <g class="connect-arrow-nudge">
+          <path d="M0 0h18M11 -5l6 5-6 5" fill="none" stroke="#0a66c2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
       </g>
     </g>
 
